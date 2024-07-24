@@ -1,15 +1,17 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Dashboard from './components/Dashboard';
-import CellDetail from './components/CellDetail';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './Home';
+import About from './About';
 
-const App = () => (
+function App() {
+  return (
     <Router>
-        <Switch>
-            <Route path="/" exact component={Dashboard} />
-            <Route path="/cell/:cellId" component={CellDetail} />
-        </Switch>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
     </Router>
-);
+  );
+}
 
 export default App;
